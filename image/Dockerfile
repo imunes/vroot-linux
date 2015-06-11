@@ -1,4 +1,4 @@
-FROM ubuntu:15.04
+FROM debian:jessie
 MAINTAINER Goran Cetusic <goran.cetusic@gmail.com>
 
 ENV HOME /root
@@ -9,4 +9,4 @@ RUN /build/prepare.sh && \
 	/build/utilities.sh && \
 	/build/cleanup.sh
 
-CMD ["/sbin/my_init"]
+CMD ["perl -e sleep"]
