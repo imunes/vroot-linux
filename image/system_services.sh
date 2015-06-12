@@ -3,6 +3,9 @@ set -e
 source /build/buildconfig
 set -x
 
+## ssh, telnet, inetd, rpcbind
+$minimal_apt_get_install rpcbind inetutils-inetd telnetd openssh-server
+
 ## Install Quagga
 $minimal_apt_get_install quagga
 if [ -d "/etc/quagga/" ]; then
