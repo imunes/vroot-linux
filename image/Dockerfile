@@ -1,8 +1,7 @@
 FROM debian:jessie
 MAINTAINER Goran Cetusic <goran.cetusic@gmail.com>
 
-ENV HOME /root
-ENV VTYSH_PAGER more
+ENV HOME=/root VTYSH_PAGER=more
 ADD . /build
 
 RUN /build/prepare.sh && \
