@@ -3,6 +3,10 @@ set -e
 source /build/buildconfig
 set -x
 
+## Install init process.
+cp /build/iinit.sh /usr/bin/
+chmod +x /usr/bin/iinit.sh
+
 ## ssh, telnet, inetd, rpcbind
 $minimal_apt_get_install rpcbind inetutils-inetd telnetd openssh-server
 

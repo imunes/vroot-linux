@@ -9,4 +9,4 @@ RUN /build/prepare.sh && \
 	/build/utilities.sh && \
 	/build/cleanup.sh
 
-CMD ["/bin/bash"]
+CMD ["/usr/bin/iinit.sh"]
