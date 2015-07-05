@@ -15,6 +15,9 @@ export INITRD=no
 mkdir -p /etc/container_environment
 echo -n no > /etc/container_environment/INITRD
 
+## Enable Debian contrib and non-free repos.
+sed -i '/^deb/ s/$/ contrib non-free/' /etc/apt/sources.list
+
 ## Fix some issues with APT packages.
 ## See https://github.com/dotcloud/docker/issues/1024
 dpkg-divert --local --rename --add /sbin/initctl
