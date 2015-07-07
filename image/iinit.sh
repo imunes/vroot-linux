@@ -1,3 +1,3 @@
 #!/bin/bash
 
-exec /usr/bin/perl -e sleep
+exec /bin/bash -c "while true; do sleep infinity; done"
