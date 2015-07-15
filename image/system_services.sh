@@ -7,8 +7,9 @@ set -x
 cp /build/iinit.sh /usr/bin/
 chmod +x /usr/bin/iinit.sh
 
-## ssh, telnet, inetd, rpcbind
-$minimal_apt_get_install rpcbind inetutils-inetd telnetd openssh-server
+## ssh, telnet, inetd, rpcbind, ...
+$minimal_apt_get_install rpcbind openssh-server openbsd-inetd bind9 \
+strongswan lighttpd postfix isc-dhcp-server dovecot-pop3d
 
 ## Install Quagga
 $minimal_apt_get_install quagga
