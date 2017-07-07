@@ -18,7 +18,8 @@ sed -i"" -e "s/^\([^#]\)/#\1/g" /etc/inetd.conf
 $minimal_apt_get_install quagga
 if [ -d "/etc/quagga/" ]; then
     cd /etc/quagga/
-    touch zebra.conf ripd.conf ripngd.conf ospfd.conf ospf6d.conf bgpd.conf
+    touch zebra.conf ripd.conf ripngd.conf ospfd.conf ospf6d.conf
+    touch bgpd.conf isisd.conf
     ln -s /boot.conf Quagga.conf
 fi
 
