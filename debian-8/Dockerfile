@@ -1,6 +1,6 @@
 FROM debian:jessie
-MAINTAINER Goran Cetusic <goran.cetusic@gmail.com>
 MAINTAINER Valter Vasic <valter.vasic@gmail.com>
+MAINTAINER Denis Salopek <denis.sale@gmail.com>
 
 ENV HOME=/root VTYSH_PAGER=more TERM=vt100 PAGER=less
 ADD . /build
