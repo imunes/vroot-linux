@@ -14,7 +14,8 @@ different variations:
 
 ## Versions
 Currently supported versions are as follows:
-| location          | distribution and version | image name                    |
+
+| Folder            | Distribution and version | Image name                    |
 | ----------------- | ------------------------ | ----------------------------- |
 | latest            | Debian Linux 9 (stretch) | imunes/vroot:latest           |
 | debian-9-min      | Debian 9 minimal         | imunes/vroot:debian-9-min     |
