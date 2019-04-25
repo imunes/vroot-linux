@@ -15,13 +15,13 @@ different variations:
 ## Versions
 Currently supported versions are as follows:
 
-| Folder            | Distribution and version | Image name                    |
-| ----------------- | ------------------------ | ----------------------------- |
-| latest            | Debian Linux 9 (stretch) | imunes/vroot:latest           |
-| debian-9-min      | Debian 9 minimal         | imunes/vroot:debian-9-min     |
-| ubuntu-18-04      | Ubuntu Linux 18.04 LTS   | imunes/vroot:ubuntu-18-04     |
-| ubuntu-18-04-min  | Ubuntu 18.04 LTS minimal | imunes/vroot:ubuntu-18-04-min |
-| debian-8          | Debian Linux 8 (jessie)  | imunes/vroot:debian-8         |
+| Folder            | Distribution and version | Image name                       |
+| ----------------- | ------------------------ | -------------------------------- |
+| latest            | Debian Linux 9 (stretch) | imunes/template:latest           |
+| debian-9-min      | Debian 9 minimal         | imunes/template:debian-9-min     |
+| ubuntu-18-04      | Ubuntu Linux 18.04 LTS   | imunes/template:ubuntu-18-04     |
+| ubuntu-18-04-min  | Ubuntu 18.04 LTS minimal | imunes/template:ubuntu-18-04-min |
+| debian-8          | Debian Linux 8 (jessie)  | imunes/template:debian-8         |
 
 ## Credits
 This image is based on [Phusion](http://www.phusion.nl/) baseimage-docker and

@@ -1,4 +1,4 @@
-FROM imunes/vroot:ubuntu-18-04-min
+FROM imunes/template:ubuntu-18-04-min
 MAINTAINER Valter Vasic <valter.vasic@gmail.com>
 MAINTAINER Denis Salopek <denis.sale@gmail.com>
 

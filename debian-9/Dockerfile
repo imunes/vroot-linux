@@ -1,4 +1,4 @@
-FROM imunes/vroot:debian-9-min
+FROM imunes/template:debian-9-min
 MAINTAINER Valter Vasic <valter.vasic@gmail.com>
 MAINTAINER Denis Salopek <denis.sale@gmail.com>
 

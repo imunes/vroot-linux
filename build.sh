@@ -1,6 +1,6 @@
 #!/bin/bash
 
-NAME="imunes/vroot"
+NAME="imunes/template"
 # set ulimits because if they are unlimited apparently the Linux kernel slows
 # things down:
 # - https://github.com/docker/for-linux/issues/73
