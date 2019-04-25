@@ -1,5 +1,10 @@
 #!/bin/bash
 NAME="imunes/vroot"
+# set ulimits because if they are unlimited apparently the Linux kernel slows
+# things down:
+# - https://github.com/docker/for-linux/issues/73
+# - https://github.com/docker/for-linux/issues/502
+ULIMITS="--ulimit nofile=10240:10240 --ulimit nproc=65356:65536"
 folder="debian-8"
 tag="latest"
 
@@ -13,5 +18,5 @@ if [[ -d "$tag" ]]; then
 fi
 
 echo "[+] Entering dir '$folder' and building '$NAME'."
-cd $folder && sudo docker build -t $NAME .
+sudo docker build $ULIMITS -t $NAME . -f $folder/Dockerfile
 echo "[+] Built image '$NAME'."
