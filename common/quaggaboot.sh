@@ -16,4 +16,3 @@ vtysh << __END__
 conf term
 `cat $1`
 __END__
-

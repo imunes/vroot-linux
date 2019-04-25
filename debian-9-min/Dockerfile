@@ -1,9 +1,9 @@
-FROM debian:jessie
+FROM debian:stretch
 MAINTAINER Valter Vasic <valter.vasic@gmail.com>
 MAINTAINER Denis Salopek <denis.sale@gmail.com>
 
 ENV HOME=/root VTYSH_PAGER=more TERM=vt100 PAGER=less
-ADD debian-8 /build
+ADD debian-9-min /build
 COPY common/* /build/
 
 RUN /build/prepare.sh && \
@@ -11,4 +11,4 @@ RUN /build/prepare.sh && \
  /build/utilities.sh && \
  /build/cleanup.sh
 
-CMD ["/usr/bin/iinit.sh"]
+CMD ["/bin/bash"]

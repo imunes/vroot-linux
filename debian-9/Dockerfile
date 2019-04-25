@@ -1,14 +1,13 @@
-FROM debian:jessie
+FROM imunes/vroot:debian-9-min
 MAINTAINER Valter Vasic <valter.vasic@gmail.com>
 MAINTAINER Denis Salopek <denis.sale@gmail.com>
 
 ENV HOME=/root VTYSH_PAGER=more TERM=vt100 PAGER=less
-ADD debian-8 /build
+ADD debian-9 /build
 COPY common/* /build/
 
 RUN /build/prepare.sh && \
- /build/system_services.sh && \
- /build/utilities.sh && \
+ /build/extras.sh && \
  /build/cleanup.sh
 
-CMD ["/usr/bin/iinit.sh"]
+CMD ["/bin/bash"]
