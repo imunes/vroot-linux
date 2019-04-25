@@ -3,8 +3,8 @@ MAINTAINER Valter Vasic <valter.vasic@gmail.com>
 MAINTAINER Denis Salopek <denis.sale@gmail.com>
 
 ENV HOME=/root VTYSH_PAGER=more TERM=vt100 PAGER=less
-ADD debian-9-min /build
-COPY common/* /build/
+ADD common/ build
+COPY debian-9-min/* /build/
 
 RUN /build/prepare.sh && \
  /build/system_services.sh && \

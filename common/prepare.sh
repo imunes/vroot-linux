@@ -10,10 +10,18 @@ export INITRD=no
 mkdir -p /etc/container_environment
 echo -n no > /etc/container_environment/INITRD
 
-# Remove jessie-updates as it is not available
-sed -i '/jessie-updates/d' /etc/apt/sources.list
-# Enable Debian contrib and non-free repos.
-sed -i '/^deb/ s/$/ contrib non-free/' /etc/apt/sources.list
+release=$(egrep ^ID= /etc/os-release | cut -d= -f2)
+if [[ "$release" == "debian" ]]; then
+    # Remove jessie-updates as it is not available
+    sed -i '/jessie-updates/d' /etc/apt/sources.list
+    # Enable Debian contrib and non-free repos.
+    sed -i '/^deb/ s/$/ contrib non-free/' /etc/apt/sources.list
+fi
+if [[ "$release" == "ubuntu" ]]; then
+    sed -i 's/^#\s*\(deb.*main restricted\)$/\1/g' /etc/apt/sources.list
+    sed -i 's/^#\s*\(deb.*universe\)$/\1/g' /etc/apt/sources.list
+    sed -i 's/^#\s*\(deb.*multiverse\)$/\1/g' /etc/apt/sources.list
+fi
 
 apt-get update
 
