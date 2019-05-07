@@ -27,7 +27,7 @@ fi
 image_name="$NAME:$tag"
 start=$(date +%s.%N)
 echo "[+] Building '$image_name' from '$folder'."
-docker build -q $ULIMITS --tag=$image_name --file=$folder/Dockerfile .
+docker build -q $ULIMITS --tag=$image_name --file=$folder/Dockerfile . || exit 1
 end=$(date +%s.%N)
 runtime=$(echo "scale=5; (${end} - ${start})/1" | bc)
 echo "[+] Built image '$image_name' in $runtime s."

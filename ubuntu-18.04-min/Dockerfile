@@ -1,13 +1,14 @@
-FROM imunes/template:ubuntu-18-04-min
+FROM ubuntu:18.04
 MAINTAINER Valter Vasic <valter.vasic@gmail.com>
 MAINTAINER Denis Salopek <denis.sale@gmail.com>
 
 ENV HOME=/root VTYSH_PAGER=more TERM=vt100 PAGER=less
 ADD common /build
-COPY ubuntu-18-04/* /build/
+COPY ubuntu-18.04-min/* /build/
 
 RUN /build/prepare.sh && \
- /build/extras.sh && \
+ /build/system_services.sh && \
+ /build/utilities.sh && \
  /build/cleanup.sh
 
 CMD ["/bin/bash"]

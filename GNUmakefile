@@ -1,6 +1,5 @@
 NAME = imunes/template
-subdirs = $(filter-out common/, $(filter %/, $(wildcard */)))
-TAGS = latest $(subdirs:%/=%)
+TAGS = latest debian-9-min ubuntu-18.04-min debian-9 ubuntu-18.04
 clean_TAGS = $(addprefix clean_,$(TAGS))
 push_TAGS = $(addprefix push_,$(TAGS))
 
@@ -25,6 +24,7 @@ $(clean_TAGS):
 	docker rmi $(NAME):$(patsubst clean_%,%,$@)
 
 $(push_TAGS):
+	docker login
 	docker push $(NAME):$(patsubst push_%,%,$@)
 
 build_all: $(TAGS)
@@ -35,6 +35,7 @@ clean_all:
 	done 
 
 push_all:
+	docker login
 	for tag in $(TAGS); do \
 		docker push $(NAME):$$tag ; \
 	done 
