@@ -1,5 +1,5 @@
 NAME = imunes/template
-TAGS = latest debian-8 debian-9-min ubuntu-18.04-min debian-9 ubuntu-18.04
+TAGS = debian-8 debian-9-min ubuntu-18.04-min debian-9 ubuntu-18.04 latest
 clean_TAGS = $(addprefix clean_,$(TAGS))
 push_TAGS = $(addprefix push_,$(TAGS))
 
@@ -29,13 +29,17 @@ $(push_TAGS):
 
 build_all: $(TAGS)
 
-clean_all:
+clean_none:
+	docker rmi `docker images | grep '^<none>' | awk '{print $3}'` 2> /dev/null || true
+	docker rmi `docker images $(NAME) | grep '<none>' | awk '{print $3}'` 2> /dev/null || true
+
+clean_all: clean_none
 	for tag in $(TAGS); do \
-		docker rmi $(NAME):$$tag ; \
-	done 
+		docker rmi $(NAME):$$tag 2> /dev/null || true; \
+	done
 
 push_all:
 	docker login
 	for tag in $(TAGS); do \
 		docker push $(NAME):$$tag ; \
-	done 
+	done
