@@ -15,13 +15,13 @@ different variations:
 ## Versions
 Currently supported versions are as follows:
 
-| Folder            | Distribution and version | Image name                       | Comment                               |
-| ----------------- | ------------------------ | -------------------------------- | ------------------------------------- |
-| latest (debian-8) | Debian 8 (jessie)        | imunes/template:latest           | old packages, but working             |
-| debian-9          | Debian 9 (stretch)       | imunes/template:debian-9         | newer packages, needs to be tested    |
-| debian-9-min      | Debian 9 minimal         | imunes/template:debian-9-min     | minimal version for basic experiments |
-| ubuntu-18.04      | Ubuntu 18.04 LTS         | imunes/template:ubuntu-18.04     | quagga doesn't work (systemd issue)   |
-| ubuntu-18.04-min  | Ubuntu 18.04 LTS minimal | imunes/template:ubuntu-18.04-min | minimal, quagga doesn't work          |
+| Folder            | Distribution and version | Image name                       | Comment                                 |
+| ----------------- | ------------------------ | -------------------------------- | --------------------------------------- |
+| latest (debian-8) | Debian 8 (jessie)        | imunes/template:latest           | old packages, but working               |
+| debian-9          | Debian 9 (stretch)       | imunes/template:debian-9         | newer packages, __quagga__ doesn't work |
+| debian-9-min      | Debian 9 minimal         | imunes/template:debian-9-min     | minimal, __quagga__ doesn't work        |
+| ubuntu-18.04      | Ubuntu 18.04 LTS         | imunes/template:ubuntu-18.04     | __quagga__ doesn't work (systemd issue) |
+| ubuntu-18.04-min  | Ubuntu 18.04 LTS minimal | imunes/template:ubuntu-18.04-min | minimal, __quagga__ doesn't work        |
 
 ## Credits
 This image is based on [Phusion](http://www.phusion.nl/) baseimage-docker and

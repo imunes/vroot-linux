@@ -6,7 +6,7 @@ NAME="imunes/template"
 # - https://github.com/docker/for-linux/issues/73
 # - https://github.com/docker/for-linux/issues/502
 ULIMITS="--ulimit nofile=10240:10240 --ulimit nproc=65356:65536"
-DEFAULT_FOLDER="debian-9"
+LATEST_FOLDER="debian-8"
 
 tag="latest"
 if [[ -n "$1" ]]; then
@@ -17,7 +17,7 @@ if [[ -d "$tag" ]]; then
     folder="$tag"
 else
     if [[ "$tag" == "latest" ]]; then
-        folder=$DEFAULT_FOLDER
+        folder=$LATEST_FOLDER
     else
         echo "[x] Tag '$tag' does not exist."
         exit
