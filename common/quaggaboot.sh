@@ -1,6 +1,13 @@
 #!/bin/sh
 
-/etc/init.d/quagga start
+run_dir='/run/quagga'
+mkdir -p $run_dir
+chown quagga:quagga $run_dir
+
+init_file='/etc/init.d/quagga'
+if  [ -f $init_file ]; then
+    $init_file start
+fi
 
 zebra -dP0
 
