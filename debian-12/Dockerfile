@@ -1,4 +1,4 @@
-FROM imunes/template:minimal-debian
+FROM imunes/template:debian-12-min
 MAINTAINER Denis Salopek <denis.sale@gmail.com>
 
 ADD common /build
