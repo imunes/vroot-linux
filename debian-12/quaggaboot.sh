@@ -9,6 +9,10 @@ for f in rip ripng ospf ospf6; do
 	grep -q "router $f\$" $1 && sed -i'' "s/${f}d=no/${f}d=yes/" $conf_dir/daemons
 done
 
+for f in ldp bfd; do
+        grep -q "mpls .*\$" $1 && sed -i'' "s/${f}d=no/${f}d=yes/" $conf_dir/daemons
+done
+
 for f in bgp isis; do
 	grep -q "router $f .*\$" $1 && sed -i'' "s/${f}d=no/${f}d=yes/" $conf_dir/daemons
 done
