@@ -18,6 +18,8 @@ if [ -d "/etc/frr/" ]; then
 	chown frr:frr zebra.conf ripd.conf ripngd.conf ospfd.conf ospf6d.conf bgpd.conf isisd.conf
 fi
 
+cp /build/frrboot.sh /usr/local/bin
+chmod 755 /usr/local/bin/frrboot.sh
 cp /build/quaggaboot.sh /usr/local/bin
 chmod 755 /usr/local/bin/quaggaboot.sh
-ln -s /usr/lib/quagga/* /usr/local/bin
+ln -s /usr/lib/frr/* /usr/local/bin
