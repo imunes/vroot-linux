@@ -6,7 +6,7 @@ NAME="imunes/template"
 # - https://github.com/docker/for-linux/issues/73
 # - https://github.com/docker/for-linux/issues/502
 ULIMITS="--ulimit nofile=10240:10240 --ulimit nproc=65356:65536"
-LATEST_FOLDER="debian-9"
+LATEST_FOLDER="debian-12"
 
 tag="latest"
 if [[ -n "$1" ]]; then
