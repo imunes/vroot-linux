@@ -15,22 +15,11 @@ different variations:
 ## Versions
 Currently supported versions are as follows:
 
-| Folder            | Distribution and version | Image name                       | Comment                              |
-| ----------------- | ------------------------ | -------------------------------- | ------------------------------------ |
-| latest (debian-8) | Debian 8 (jessie)        | imunes/template:latest           | old packages, but tested and working |
-| debian-9          | Debian 9 (stretch)       | imunes/template:debian-9         | newer packages, needs testing        |
-| debian-9-min      | Debian 9 minimal         | imunes/template:debian-9-min     | minimal edition                      |
-| ubuntu-18.04      | Ubuntu 18.04 LTS         | imunes/template:ubuntu-18.04     | ubuntu release, needs testing        |
-| ubuntu-18.04-min  | Ubuntu 18.04 LTS minimal | imunes/template:ubuntu-18.04-min | minimal edition                      |
-
-## Credits
-This image is based on [Phusion](http://www.phusion.nl/) baseimage-docker and
-slightly modified to run a different distro version along with some new
-packages.
-
-You can use it as a base for your own Docker images. For more info on this
-please check the [basedocker-image](https://github.com/phusion/baseimage-docker)
-README or the source code.
+| Folder             | Distribution and version | Image name                       | Comment                              |
+| ------------------ | ------------------------ | -------------------------------- | ------------------------------------ |
+| latest (debian-12) | Debian 12 (bookworm)     | imunes/template:latest           | default vroot                        |
+| debian-12-min      | Debian 12 minimal        | imunes/template:debian-12-min    | minimal edition                      |
+| arm64              | Ubuntu 20.04 (ARM64)     | imunes/template:arm              | default vroot (ARM64)                |
 
 -----------------------------------------
 [<img src="http://imunes.tel.fer.hr/images/imunes_logo.png">](http://www.imunes.net/)
