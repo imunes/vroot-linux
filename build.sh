@@ -18,12 +18,15 @@ if [[ -d "$tag" ]]; then
 else
     if [[ "$tag" == "latest" ]]; then
         folder=$LATEST_FOLDER
+    elif [[ "$tag" == "latest-min" ]]; then
+        folder=$LATEST_FOLDER-min
     else
         echo "[x] Tag '$tag' does not exist."
         exit
     fi
 fi
 
+rm -f /tmp/imunes_template_build_${tag}.log
 image_name="$NAME:$tag"
 start=$(date +%s.%N)
 echo "[+] Building '$image_name' from '$folder'."

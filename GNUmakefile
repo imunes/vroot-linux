@@ -1,5 +1,5 @@
 NAME = imunes/template
-TAGS = debian-12-min debian-12 arm64 latest
+TAGS = debian-12-min debian-12 arm64 latest-min latest
 clean_TAGS = $(addprefix clean_,$(TAGS))
 push_TAGS = $(addprefix push_,$(TAGS))
 
