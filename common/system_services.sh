@@ -4,7 +4,7 @@ source /build/buildconfig
 set -x
 
 # quagga, ssh, inetd, strongswan
-$minimal_apt_get_install quagga rpcbind openssh-server openbsd-inetd ftpd telnetd strongswan
+$minimal_apt_get_install quagga rpcbind openssh-server openbsd-inetd ftpd telnetd strongswan strongswan-swanctl
 
 # configure Quagga
 if [ -d "/etc/quagga/" ]; then
