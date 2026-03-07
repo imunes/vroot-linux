@@ -1,5 +1,7 @@
 #!/bin/bash
 
+: ${EXTRA_TOOLS:=}
+
 checkOS() {
 	os_str=$1
 	os_id=""
@@ -81,7 +83,7 @@ rm -f /tmp/imunes_template_build_${tag}.log
 image_name="$NAME:$tag"
 start=$(date +%s.%N)
 echo "[+] Building '$image_name' from '$folder'."
-cat $folder/Dockerfile | sed "s+^FROM replace:me\$+FROM $image+" | docker build $ULIMITS --tag=$image_name --file - . > /tmp/imunes_template_build_${tag}.log || exit 1
+cat $folder/Dockerfile | sed "s+^FROM replace:me\$+FROM $image+" | docker build --build-arg EXTRA_TOOLS="${EXTRA_TOOLS}" $ULIMITS --tag=$image_name --file - . > /tmp/imunes_template_build_${tag}.log || exit 1
 end=$(date +%s.%N)
 runtime=$(echo "scale=5; (${end} - ${start})/1" | bc)
 echo "[+] Built image '$image_name' in $runtime s."
