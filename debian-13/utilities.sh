@@ -8,7 +8,17 @@ $minimal_apt_get_install curl less nano vim-tiny psmisc tcpdump iputils-ping \
 iputils-arping iputils-tracepath net-tools file telnet isc-dhcp-client nmap \
 dnsutils netcat-openbsd man dsniff traceroute ettercap-text-only tcpreplay \
 hping3 p0f lsof strace elinks iperf iftop scapy bsd-mailx ndisc6 radvd iptables \
-nftables tayga ftp rsyslog frr
+nftables tayga ftp rsyslog gnupg ca-certificates
+
+curl -s https://deb.frrouting.org/frr/keys.gpg \
+  | gpg --dearmor -o /usr/share/keyrings/frrouting.gpg
+chmod 644 /usr/share/keyrings/frrouting.gpg
+
+echo "deb [signed-by=/usr/share/keyrings/frrouting.gpg] https://deb.frrouting.org/frr trixie frr-stable" \
+  > /etc/apt/sources.list.d/frr.list
+
+apt-get update
+$minimal_apt_get_install frr frr-pythontools
 
 # Install "Quagga"
 if [ -d "/etc/frr/" ]; then

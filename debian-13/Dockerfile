@@ -9,5 +9,6 @@ RUN apt-get update
 RUN /build/system_services.sh && \
  /build/utilities.sh && \
  /build/cleanup.sh
+RUN apt-get -y autoremove
 
 CMD ["/usr/bin/iinit.sh"]
