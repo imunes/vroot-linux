@@ -7,6 +7,7 @@ NAME="imunes/template"
 # - https://github.com/docker/for-linux/issues/502
 ULIMITS="--ulimit nofile=10240:10240 --ulimit nproc=65356:65536"
 LATEST_FOLDER="debian-13"
+PLATFORM=${PLATFORM:-linux/amd64}
 
 tag="latest"
 if [[ -n "$1" ]]; then
@@ -30,7 +31,7 @@ rm -f /tmp/imunes_template_build_${tag}.log
 image_name="$NAME:$tag"
 start=$(date +%s.%N)
 echo "[+] Building '$image_name' from '$folder'."
-docker build $ULIMITS --tag=$image_name --file=$folder/Dockerfile . > /tmp/imunes_template_build_${tag}.log || exit 1
+docker build --platform=$PLATFORM $ULIMITS --tag=$image_name --file=$folder/Dockerfile . > /tmp/imunes_template_build_${tag}.log || exit 1
 end=$(date +%s.%N)
 runtime=$(echo "scale=5; (${end} - ${start})/1" | bc)
 echo "[+] Built image '$image_name' in $runtime s."
